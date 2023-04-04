@@ -1,0 +1,46 @@
+# ******************
+# ECCO cost function
+# ******************
+#
+ &ECCO_COST_NML
+
+ data_errfile    = 'data.err',
+ tbarfile        = 'tbar',
+ sbarfile        = 'sbar',
+ psbarfile       = 'psbar',
+ ubarfile        = 'ubar',
+ vbarfile        = 'vbar',
+ 
+ whflux0        = 20.,
+ wsflux0        = 3.0E-8,
+ wtau0          = 2.0E-2,
+ watemp0        = 1.0,
+ waqh0          = 5.E-4,
+ wprecip0       = 1.5E-8,
+ wswflux0       = 15.0,
+ wswdown0       = 15.0,
+ wwind0         = 1.0,
+#
+ wmean_hflux    = 30.,
+ wmean_sflux    = 1.6E-8,
+ wmean_tau      = 0.1,
+ wmean_atemp    = 4.,
+ wmean_aqh      = 2.E-3,
+ wmean_precip   = 6.E-8,
+ wmean_swflux   = 60.,
+ wmean_swdown   = 60.,
+ wmean_wind     = 4.0,
+#
+ cost_iprec  = 64,
+# cost_yftype    = 'RL',
+ &
+
+ &ECCO_GENCOST_NML
+ gencost_avgperiod(1) = 'step',
+ gencost_barfile(1) = 'm_boxmean_theta',
+ gencost_name(1) = 'my_theta_mask',
+ gencost_outputlevel(1)=0,
+ gencost_mask(1) = 'my_64_mask'
+ mult_gencost(1) = 1.,
+ &
+
