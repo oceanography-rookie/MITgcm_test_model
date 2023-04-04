@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+
+FC='mpif90'
+CC='mpicc'
+LINK='mpif90 -mcmodel=medium -shared-intel'
+DEFINES='-DALLOW_USE_MPI -DALWAYS_USE_MPI -DWORDLENGTH=4'
+CPP='cpp -traditional -P'
+F90FIXEDFORMAT='-fixed -Tf'
+
+NOOPTFLAGS=''
+NOOPTFILES=''
+
+INCLUDEDIRS='/sw/spack-levante/netcdf-fortran-4.5.3-k6xq5g/include'
+INCLUDES='-I$INCLUDEDIRS'
+LIBS='-L/sw/spack-levante/netcdf-fortran-4.5.3-k6xq5g/lib -L/sw/spack-levante/netcdf-c-4.8.1-2k3cmu/lib -lnetcdff -Wl,-rpath,/sw/spack-levante/netcdf-fortran-4.5.3-k6xq5g/lib -Wl,-rpath,/sw/spack-levante/netcdf-c-4.8.1-2k3cmu/lib'
+
+MPI_INC_DIR='/sw/spack-levante/openmpi-4.1.2-yfwe6t/include'
+
+FFLAGS='-132 -r8 -i4 -W0 -WB -convert big_endian -assume byterecl -fPIC -mcmodel=medium -shared-intel'
+
+#FOPTIM='-O3 -xCORE-AVX2'
+FOPTIM='-O3'
+
+CFLAGS='-O3 -ip -fPIC'
+
+INCLUDES="$INCLUDES -I$MPI_INC_DIR"
+INCLUDEDIRS="$INCLUDEDIRS $MPI_INC_DIR"
+
+MPIINCLUDEDIR="$MPI_INC_DIR"
+MPI_HEADER_FILES='mpif.h mpiof.h'
+MPI_HEADER_FILES_INC='./mpi_headers/mpif.h ./mpi_headers/mpiof.h'
+~                                                                   
