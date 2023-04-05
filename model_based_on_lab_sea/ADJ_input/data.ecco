@@ -1,0 +1,17 @@
+# ******************
+# ECCO cost function
+# ******************
+ &ECCO_COST_NML
+ cost_iprec  = 32,
+  cost_yftype = 'RL',
+ &
+
+ &ECCO_GENCOST_NML
+#
+ gencost_avgperiod(1)  = 'step',
+ gencost_barfile(1) = 'm_boxmean_theta',
+ gencost_mask(1) = 'my_mask',
+ gencost_name(1) = 'labsea',
+ gencost_outputlevel(1)=0,
+ mult_gencost(1) = 1.,
+ &
