@@ -1,0 +1,43 @@
+fwd
+ additional DIVA run # 1 : done
+done1
+ additional DIVA run # 2 : done
+done2
+ additional DIVA run # 3 : done
+done3
+
+********************************************************************************
+*                                                                              *
+*  This is the automated job summary provided by DKRZ.                         *
+*  If you encounter problems, need assistance or have any suggestion, please   *
+*  write an email to                                                           *
+*                                                                              *
+*  --  support@dkrz.de --                                                      *
+*                                                                              *
+*                       We hope you enjoyed the DKRZ supercomputer LEVANTE ... *
+*
+* JobID            : 4637055
+* JobName          : run                                               
+* Account          : uo0122
+* User             : u301673 (100914), u300 (32013)                    
+* Partition        : compute
+* QOS              : normal
+* Nodelist         : l[30462-30479] (18)                                       
+* Submit date      : 2023-04-06T08:37:16
+* Start time       : 2023-04-06T08:37:25
+* End time         : 2023-04-06T08:44:30
+* Elapsed time     : 00:07:05 (Timelimit=08:00:00)                     
+* Command          : /work/uo0122/u301673/MITgcm/verification/lab_sea/ADJ_input/
+*                    run.sh
+* WorkDir          : /work/uo0122/u301673/MITgcm/verification/lab_sea/ADJ_input
+*
+* StepID | JobName      NodeHours    MaxRSS [Byte] (@task)
+* ------------------------------------------------------------------------------
+* batch  | batch              2.1
+* extern | extern             2.1               2436K (17)
+* 0      | mitgcmuv_ad       0.81              512460K (0)
+* 1      | mitgcmuv_ad       0.51              275436K (0)
+* 2      | mitgcmuv_ad       0.15              220168K (0)
+* 3      | mitgcmuv_ad       0.56              943344K (0)
+* ------------------------------------------------------------------------------
+

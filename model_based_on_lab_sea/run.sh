@@ -14,10 +14,9 @@
 limit stacksize unlimit
 setenv OMPI_MCA_pml_ucx_opal_mem_hooks 1
 
-set rundir=../ADJ_OUTPUT
+set rundir=../ADJ_run
 set source=../ADJ_build
 set ctrl=../ADJ_input
-
 
 mkdir -p $rundir
 rm -rf $rundir
@@ -35,22 +34,26 @@ cp $ctrl/my* .
 srun -n 1656 --hint=nomultithread ./mitgcmuv_ad
 echo "fwd"
 mv -f STDOUT.0000 STDOUT.0000.fwd
+cp divided.ctrl divided.ctrl_1st_copy
+
 ############diva adjoint####
 srun -n 1656 --hint=nomultithread ./mitgcmuv_ad
 echo " additional DIVA run # 1 : done"
 echo "done1"
 mv -f STDOUT.0000 STDOUT.0000.diva_1
+cp divided.ctrl divided.ctrl_2nd_copy
 
 srun -n 1656 --hint=nomultithread ./mitgcmuv_ad
 echo " additional DIVA run # 2 : done"
 echo "done2"
 mv -f STDOUT.0000 STDOUT.0000.diva_2
+cp divided.ctrl divided.ctrl_3rd_copy
 
 srun -n 1656 --hint=nomultithread ./mitgcmuv_ad
 echo " additional DIVA run # 3 : done"
 echo "done3"
 mv -f STDOUT.0000 STDOUT.0000.diva_3
-
+cp divided.ctrl divided.ctrl_4th_copy
 
 
 
